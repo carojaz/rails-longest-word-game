@@ -1,0 +1,8 @@
+<h1>Result</h1>
+
+<p> <%= @result[:message] %> </p>
+<p> Your score is : <%= @result[:score] %> point(s) </p>
+<p> Your total score list is : <%= session[:score] %> </p>
+<p> Your total score is : <%= @total %> </p>
+
+<%= link_to "Try again", new_path %>
