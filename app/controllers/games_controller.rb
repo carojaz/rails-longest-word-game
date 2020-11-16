@@ -8,6 +8,7 @@ class GamesController < ApplicationController
       @grid << ('A'..'Z').to_a.sample
       n += 1
     end
+  total
   end
 
   def count(letters)
@@ -36,6 +37,10 @@ class GamesController < ApplicationController
       @result = { score: 0, message: "Nice try but in #{@attempt} some letters are not in the grid!" }
     end
     session[:score] ? session[:score] << @result[:score] : session[:score] = [@result[:score]]
-    @total = session[:score].reduce(0, :+)
+    total
+  end
+
+  def total
+    session[:score].nil? ? 0 : @total = session[:score].reduce(0, :+)
   end
 end

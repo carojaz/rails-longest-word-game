@@ -1,4 +1,4 @@
-<h1>New Game</h1>
+<h1>Game</h1>
 
 <ol>
   <% @grid.each do |letter| %>
@@ -13,4 +13,4 @@
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 </form>
 
-<p> Your total score is : <%= session[:score].reduce(0, :+) %> </p>
+<p> Your total score is : <%= @total %> </p>
